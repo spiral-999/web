@@ -12,7 +12,8 @@
 const HelloWorld = () => {
     return (
       <div>
-        <h1>socorro</h1>
+        <h1>Mateus Lima Rodrigues</h1>
+        <h1>Ciências da Computação</h1>
       </div>
     );
   };
