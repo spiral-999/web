@@ -1,10 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
-import Pai from './components/ATIVIDADES/Atividade03/Questão02/Pai';
+import Questao01 from './components/ATIVIDADES/Atividade04/Questão02/MeuAsync';
 function App() {
   return (
     <div className="App">
-      <Pai/>
+      <Questao01/>
     </div>
   );
 }
