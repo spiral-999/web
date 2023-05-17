@@ -1,10 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
-import ComponenteAvo from './components/ATIVIDADES/Atividade02/Questão03/ComponenteAvo';
+import Pai from './components/08_PAIFILHO/Pai';
 function App() {
   return (
     <div className="App">
-      <ComponenteAvo/>
+      <Pai/>
     </div>
   );
 }
