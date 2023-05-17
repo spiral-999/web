@@ -1,10 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
-import FuncaoA from './components/06_CONTEXTO/FuncaoA';
+import ComponenteAvo from './components/ATIVIDADES/Atividade02/Questão03/ComponenteAvo';
 function App() {
   return (
     <div className="App">
-      <FuncaoA/>
+      <ComponenteAvo/>
     </div>
   );
 }
