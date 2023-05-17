@@ -1,0 +1,22 @@
+Questão 4: Props Drilling
+
+Primeiramente, para explicar o motivo que faz o uso de contextos resolver o problema de Props
+drilling, é necessário entender o que é props drilling, isso acontece quando usamos componentes
+filhos e propriedades para eles, por exemplo, considerando esse contexto:
+                                    [PAI]
+                                    /   \
+                                  [A]   [B]
+                                  / \
+                                [C] [D]
+Podemos levar em consideração uma propriedade cor, que é passada do pai para os seus filhos,
+mas, o programador deseja essa propriedade apenas no componente D, sendo assim, ele precisa
+fazer o Props Drilling até chegar na propriedade D, como o nome sugere, "perfurando" os componentes
+anteriores, ou seja, a cor desejada para o componente D começa no Pai, passa pelo componente A 
+que não tem interesse nessa propriedade e chega em D.
+
+O uso de contexo torna tudo mais simples, criando um contexto global para toda a aplicação e que
+torna possível o componente D receber essa propriedade sem passsar pelo componente A, considerando
+o exemplo não parece grande coisa, mas pensando em larga escala e em um exemplo exagerado, é possível
+imaginar uma árvore com mais de 50 componentes e que apenas o último deseja essa mesma propriedade de
+cor, com um contexto global criado, basta esse último componente ter um objeto que recebe esse contexto
+global da operação useContext() e usar diretamente

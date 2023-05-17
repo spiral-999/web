@@ -1,10 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
-import Questao01 from './components/ATIVIDADES/Atividade04/Questão02/MeuAsync';
+import Questao01X from './components/PROVAS/PROVA1F/Questao01';
 function App() {
   return (
     <div className="App">
-      <Questao01/>
+      <Questao01X/>
     </div>
   );
 }
