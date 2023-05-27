@@ -1,4 +1,8 @@
-const Imagem = ({id}) =>{
+import { useSelector } from "react-redux"
+const Imagem = () =>{
+    const id = useSelector(
+        (state) => state.id.value
+    )
     return (
         <>
             <img

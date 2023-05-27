@@ -1,10 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
-import TelaPrincipal from './components/11_REDUX/Sem Redux/TelaPrincipal';
+import MeuIndex from './components/11_REDUX/Com Redux/MeuIndex';
 function App() {
   return (
     <div className="App">
-      <TelaPrincipal/>
+      <MeuIndex/>
     </div>
   );
 }
