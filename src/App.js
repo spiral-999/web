@@ -1,10 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
-import Questao01X from './components/PROVAS/PROVA1F/Questao01';
+import Populacao from './components/PROVAS/PROVA1F/Questao03';
 function App() {
   return (
     <div className="App">
-      <Questao01X/>
+      <Populacao/>
     </div>
   );
 }
