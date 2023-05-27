@@ -1,10 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
-import Populacao from './components/PROVAS/PROVA1F/Questao03';
+import TelaPrincipal from './components/11_REDUX/Sem Redux/TelaPrincipal';
 function App() {
   return (
     <div className="App">
-      <Populacao/>
+      <TelaPrincipal/>
     </div>
   );
 }
