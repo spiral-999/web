@@ -1,11 +1,12 @@
 import TelaPrincipal from "./TelaPrincipal"
-import { Store } from "@reduxjs/toolkit"
+import { store } from "./store/store"
 import { Provider } from "react-redux"
-const MeuIndex = () =>{
-    return(
+
+const MeuIndex = () => {
+    return (
         <>
-        <Provider store = {store}>
-            <TelaPrincipal/>
+        <Provider store={store}>
+            <TelaPrincipal />
         </Provider>
         </>
     )

@@ -1,10 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
-import MeuIndex from './components/11_REDUX/Com Redux/MeuIndex';
+import MeuIndex from './components/11_REDUX/Redux/MeuIndex';
 function App() {
   return (
     <div className="App">
-      <MeuIndex/>
+      
     </div>
   );
 }
