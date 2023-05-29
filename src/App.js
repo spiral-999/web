@@ -1,10 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import MeuIndex from './components/11_REDUX/Com_Redux/MeuIndex';
+import Questao01 from './components/ATIVIDADES/Atividade04/Questão01/minhaPromise';
+import Questao02 from './components/ATIVIDADES/Atividade04/Questão02/MeuAsync';
 function App() {
   return (
     <div className="App">
-      <MeuIndex/>
+      <Questao02/>
     </div>
   );
 }

@@ -21,7 +21,7 @@ const minhaPromessa = new Promise(
     } //resolve e reject
 )
 
-const Questao01 = () => {
+const Questao02 = () => {
 
     const [meusDados, setMeusDados] = useState([])
     const [loading, setLoading] = useState(false)
@@ -79,10 +79,10 @@ const Questao01 = () => {
 
     return (
         <>
-            <h1>Questao 01</h1>
+            <h1>Questao 02</h1>
             {renderizar()}
         </>
     )
 }
 
-export default Questao01
+export default Questao02
