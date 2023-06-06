@@ -1,10 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
-import Questao02 from './components/ATIVIDADES/Atividade04/Questão02/MeuAsync';
+import MainPage from './components/14_MUI/2_CRUD/MainPage';
 function App() {
   return (
     <div className="App">
-      <Questao02/>
+      <MainPage/>
     </div>
   );
 }
