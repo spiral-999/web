@@ -4,6 +4,7 @@ import DeleteIcon from "@mui/icons-material/Delete"
 import EditIcon from "@mui/icons-material/Edit"
 import { styled } from '@mui/material/styles';
 import { tableCellClasses } from '@mui/material/TableCell';
+import { Link } from "react-router-dom"
 const Listar = () => {
     const professores = [
         { id: 0, nome: "Vito Corleone", curso: "SI", titulacao: "MEST" },
@@ -39,7 +40,7 @@ const Listar = () => {
                                         <StyledTableCell>{professor.titulacao}</StyledTableCell>
                                         <StyledTableCell>
                                             <Box>
-                                                <IconButton aria-label="edit" color="primary">
+                                                <IconButton aria-label="edit" color="primary" component = {Link} to="/editarProfessor">
                                                     <EditIcon />
                                                 </IconButton>
                                                 <IconButton aria-label="delete" color="error">
