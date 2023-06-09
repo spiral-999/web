@@ -13,6 +13,11 @@ const Listar = () => {
         { id: 3, nome: "Kay Adams", curso: "SI", titulacao: "DOUT" },
         { id: 4, nome: "Peter Clemenza", curso: "CC", titulacao: "MEST" },
     ]
+    function deleteProfessorById(id){
+        if(window.confirm("Deseja Excluir?")){
+            alert("Professor " + id + " excluído com sucesso!")
+        }
+    }
     return (
         <>
             <Typography variant="h5" fontWeight="bold">
@@ -40,10 +45,10 @@ const Listar = () => {
                                         <StyledTableCell>{professor.titulacao}</StyledTableCell>
                                         <StyledTableCell>
                                             <Box>
-                                                <IconButton aria-label="edit" color="primary" component = {Link} to="/editarProfessor">
+                                                <IconButton aria-label="edit" color="primary" component = {Link} to={`/editarProfessor/${professor.id}`}>
                                                     <EditIcon />
                                                 </IconButton>
-                                                <IconButton aria-label="delete" color="error">
+                                                <IconButton aria-label="delete" color="error" onClick={()=>deleteProfessorById(professor.id )}>
                                                     <DeleteIcon />
                                                 </IconButton>
                                             </Box>

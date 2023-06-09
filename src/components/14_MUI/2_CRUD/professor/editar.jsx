@@ -1,19 +1,36 @@
 import { TextField, Typography, Box, FormControl, InputLabel, Select, MenuItem, Button, FormLabel, FormGroup, FormControlLabel, Checkbox } from "@mui/material"
-import { useState } from "react"
-
+import { useEffect, useState } from "react"
+import { useParams } from "react-router-dom"
 const Editar = () => {
+    let { id } = useParams()
     const professores = [
-        { id: 0, nome: "Vito Corleone", curso: "SI", titulacao: "MEST", ai: { es: false, al: false, ds: false, mc: false } },
-        { id: 1, nome: "Michael Corleone", curso: "DD", titulacao: "GRAD", ai: { es: false, al: false, ds: false, mc: false } },
-        { id: 2, nome: "Luca Brasi", curso: "SI", titulacao: "MEST", ai: { es: false, al: false, ds: false, mc: false } },
-        { id: 3, nome: "Kay Adams", curso: "SI", titulacao: "DOUT", ai: { es: false, al: false, ds: false, mc: false } },
-        { id: 4, nome: "Peter Clemenza", curso: "CC", titulacao: "MEST", ai: { es: false, al: false, ds: false, mc: false } },
+        { id: 0, nome: "Vito Corleone", curso: "SI", titulacao: "MEST", ai: { es: false, al: false, ds: true, mc: true } },
+        { id: 1, nome: "Michael Corleone", curso: "DD", titulacao: "GRAD", ai: { es: false, al: true, ds: false, mc: false } },
+        { id: 2, nome: "Luca Brasi", curso: "SI", titulacao: "MEST", ai: { es: false, al: true, ds: false, mc: true } },
+        { id: 3, nome: "Kay Adams", curso: "SI", titulacao: "DOUT", ai: { es: true, al: false, ds: false, mc: false } },
+        { id: 4, nome: "Peter Clemenza", curso: "CC", titulacao: "MEST", ai: { es: true, al: false, ds: false, mc: true } },
     ]
+    function getProfessorById(id) {
+        for (let i = 0; i < professores.length; i++)
+            if (id == professores[i].id) return professores[i]
+        return null
+    }
     const [nome, setNome] = useState("")
     const [curso, setCurso] = useState("")
     const [titulacao, setTitulacao] = useState("GRAD")
     const [ai, setAi] = useState({ es: false, al: false, ds: false, mc: false })
     const { es, al, ds, mc } = ai
+    useEffect(
+        () => {
+            let professor = getProfessorById(id)
+            setNome(professor.nome)
+            setCurso(professor.curso)
+            setTitulacao(professor.titulacao)
+            setAi(professor.ai)
+        }
+        ,
+        []
+    )
     function handleSubmit(event) {
         event.preventDefault()
         console.log(nome)
@@ -30,7 +47,7 @@ const Editar = () => {
     return (
         <>
             <Typography variant="h5" fontWeight="bold">
-                Editar Professor
+                Editar Professor {id}
             </Typography>
             <Box
                 component="form"
@@ -43,6 +60,7 @@ const Editar = () => {
                     id="nome"
                     name="nome"
                     label="Nome Completo"
+                    value={nome}
                     autoFocus
                     onChange={(event) => setNome(event.target.value)}
                 />
@@ -53,6 +71,7 @@ const Editar = () => {
                     id="curso"
                     name="curso"
                     label="Curso"
+                    value={curso}
                     autoFocus
                     onChange={(event) => setCurso(event.target.value)}
                 />
@@ -87,13 +106,13 @@ const Editar = () => {
                         <FormControlLabel control={<Checkbox checked={mc} name="mc" onChange={handleCheckbox} />} label="Matematica Computacional" />
                     </FormGroup>
                 </FormControl>
-                <Box sx={{ display: "flex", justifyContent: "center" }}>
+                <Box sx={{ display: "flex", justifyContent: "center"}}>
                     <Button
                         type="submit"
                         variant="contained"
-                        sx={{ my: 3, backgroundColor: "red" }}
+                        sx={{ my: 4, backgroundColor: "red" }}
                     >
-                        Cadastrar
+                        Atualizar
                     </Button>
                 </Box>
             </Box>
