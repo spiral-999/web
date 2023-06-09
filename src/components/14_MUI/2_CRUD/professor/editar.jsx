@@ -110,7 +110,7 @@ const Editar = () => {
                     <Button
                         type="submit"
                         variant="contained"
-                        sx={{ my: 4, backgroundColor: "red" }}
+                        sx={{ my: 4, backgroundColor: "black" }}
                     >
                         Atualizar
                     </Button>

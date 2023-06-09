@@ -84,7 +84,7 @@ const Cadastrar = () => {
                     <Button
                         type="submit"
                         variant="contained"
-                        sx={{ my: 3, backgroundColor: "red" }}
+                        sx={{ my: 3, backgroundColor: "black" }}
                     >
                         Cadastrar
                     </Button>

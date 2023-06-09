@@ -1,5 +1,5 @@
 import { AppBar, Box, Button, Container, Menu, MenuItem, Toolbar, Typography } from "@mui/material"
-import AdbIcon from "@mui/icons-material/Adb"
+import BedtimeIcon from '@mui/icons-material/Bedtime';
 import { Link } from "react-router-dom"
 import { useState } from "react"
 
@@ -46,10 +46,10 @@ const MyMenu = () => {
 
 
     return (
-        <AppBar position="static" sx={{ backgroundColor: "red" }}>
+        <AppBar position="static" sx={{ backgroundColor: "black" }}>
             <Container>
                 <Toolbar>
-                    <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+                    <BedtimeIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
                     <Typography
                         variant="h5"
                         component="a"

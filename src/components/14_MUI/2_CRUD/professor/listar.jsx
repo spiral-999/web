@@ -45,7 +45,7 @@ const Listar = () => {
                                         <StyledTableCell>{professor.titulacao}</StyledTableCell>
                                         <StyledTableCell>
                                             <Box>
-                                                <IconButton aria-label="edit" color="primary" component = {Link} to={`/editarProfessor/${professor.id}`}>
+                                                <IconButton aria-label="edit" color="error" component = {Link} to={`/editarProfessor/${professor.id}`}>
                                                     <EditIcon />
                                                 </IconButton>
                                                 <IconButton aria-label="delete" color="error" onClick={()=>deleteProfessorById(professor.id )}>
