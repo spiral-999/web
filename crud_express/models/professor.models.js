@@ -7,4 +7,4 @@ class ProfessorModel {
         this.ai = ai
     }
 }
-modules.exports = ProfessorModel
+module.exports = ProfessorModel
