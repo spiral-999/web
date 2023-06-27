@@ -1,6 +1,7 @@
 import { TextField, Typography, Box, FormControl, InputLabel, Select, MenuItem, Button, FormLabel, FormGroup, FormControlLabel, Checkbox } from "@mui/material"
 import { useState } from "react"
 import axios from "axios"
+import { useNavigate } from "react-router-dom"
 const Cadastrar = () => {
     const [nome, setNome] = useState("")
     const [curso, setCurso] = useState("")
