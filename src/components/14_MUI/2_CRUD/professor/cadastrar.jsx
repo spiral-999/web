@@ -1,6 +1,6 @@
 import { TextField, Typography, Box, FormControl, InputLabel, Select, MenuItem, Button, FormLabel, FormGroup, FormControlLabel, Checkbox } from "@mui/material"
 import { useState } from "react"
-
+import axios from "axios"
 const Cadastrar = () => {
     const [nome, setNome] = useState("")
     const [curso, setCurso] = useState("")
@@ -9,10 +9,14 @@ const Cadastrar = () => {
     const {es,al,ds,mc} = ai
     function handleSubmit(event) {
         event.preventDefault()
-        console.log(nome)
-        console.log(curso)
-        console.log(titulacao)
-        console.log(ai)
+        const novoProfessor = {nome,curso,titulacao,ai}
+        axios.post("http://localhost:3001/professor/register",novoProfessor)
+        .then(
+            (response)=>{
+                alert(`Professor ID ${response.data.id} adicionado!`)
+            }
+        )
+        .catch(error=>console.log(error))
     }
     function handleCheckbox(event){
         setAi({
