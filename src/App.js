@@ -1,10 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
-import MainPage from './components/14_MUI/2_CRUD/MainPage';
+import Signin from './components/PROVAS/PROVA2/01Signin/Signin';
+import MainPage from './components/PROVAS/PROVA2/02Crud/MainPage';
 function App() {
+  const auth = localStorage.getItem("res") === "true";
   return (
-    <div className="App">
-      <MainPage/>
+    <div>
+      {auth ? <MainPage /> : <Signin />}
     </div>
   );
 }

@@ -1,20 +1,11 @@
 import { TextField, Typography, Box, FormControl, InputLabel, Select, MenuItem, Button, FormLabel, FormGroup, FormControlLabel, Checkbox } from "@mui/material"
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
+import axios from "axios"
 const Editar = () => {
     let { id } = useParams()
-    const professores = [
-        { id: 0, nome: "Vito Corleone", curso: "SI", titulacao: "MEST", ai: { es: false, al: false, ds: true, mc: true } },
-        { id: 1, nome: "Michael Corleone", curso: "DD", titulacao: "GRAD", ai: { es: false, al: true, ds: false, mc: false } },
-        { id: 2, nome: "Luca Brasi", curso: "SI", titulacao: "MEST", ai: { es: false, al: true, ds: false, mc: true } },
-        { id: 3, nome: "Kay Adams", curso: "SI", titulacao: "DOUT", ai: { es: true, al: false, ds: false, mc: false } },
-        { id: 4, nome: "Peter Clemenza", curso: "CC", titulacao: "MEST", ai: { es: true, al: false, ds: false, mc: true } },
-    ]
-    function getProfessorById(id) {
-        for (let i = 0; i < professores.length; i++)
-            if (id == professores[i].id) return professores[i]
-        return null
-    }
+    const navigate = useNavigate()
     const [nome, setNome] = useState("")
     const [curso, setCurso] = useState("")
     const [titulacao, setTitulacao] = useState("GRAD")
@@ -22,21 +13,31 @@ const Editar = () => {
     const { es, al, ds, mc } = ai
     useEffect(
         () => {
-            let professor = getProfessorById(id)
-            setNome(professor.nome)
-            setCurso(professor.curso)
-            setTitulacao(professor.titulacao)
-            setAi(professor.ai)
+            axios.get(`http://localhost:3001/professor/retrieve/${id}`)
+            .then(
+                (response)=>{
+                    setNome(response.data.nome)
+                    setCurso(response.data.curso)
+                    setTitulacao(response.data.titulacao)
+                    setAi(response.data.ai)
+                }
+            )
+            .catch(error=>console.log(error))
         }
         ,
         []
     )
     function handleSubmit(event) {
         event.preventDefault()
-        console.log(nome)
-        console.log(curso)
-        console.log(titulacao)
-        console.log(ai)
+        const professorAtualizado = {nome,curso,titulacao,ai}
+        axios.put(`http://localhost:3001/professor/update/${id}`,professorAtualizado)
+        .then(
+            (response)=>{
+                alert(`Professor ID ${response.data.id} atualizado!`)
+                navigate("/listarProfessor")
+            }
+        )
+        .catch(error=>console.log(error))
     }
     function handleCheckbox(event) {
         setAi({

@@ -8,6 +8,7 @@ const Cadastrar = () => {
     const [titulacao, setTitulacao] = useState("GRAD")
     const [ai,setAi] = useState({es:false,al:false,ds:false,mc:false})
     const {es,al,ds,mc} = ai
+    const navigate = useNavigate()
     function handleSubmit(event) {
         event.preventDefault()
         const novoProfessor = {nome,curso,titulacao,ai}
@@ -15,6 +16,7 @@ const Cadastrar = () => {
         .then(
             (response)=>{
                 alert(`Professor ID ${response.data.id} adicionado!`)
+                navigate("/listarProfessor")
             }
         )
         .catch(error=>console.log(error))
