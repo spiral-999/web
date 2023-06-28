@@ -21,17 +21,10 @@ const Editar = () => {
             navigate("/listarProfessor")
         })
         .catch(error=>console.log(error))
-        /*event.preventDefault()
-        console.log(nome)
-        console.log(curso)
-        console.log(titulacao)
-        console.log(ai)*/
-
     }
 
     useEffect(
         () => {
-            //let professor = getProfessorById(id)
             axios.get(`http://localhost:3001/professores/recuperar/${id}`)
                 .then(
                     (response) => {
